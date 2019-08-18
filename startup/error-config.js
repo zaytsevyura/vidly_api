@@ -1,5 +1,6 @@
 require('express-async-errors');
-require('dotenv').config();
+const config = require('config');
+
 
 module.exports = function() {
   
@@ -14,7 +15,7 @@ module.exports = function() {
     })
 
 
-  if (!process.env.SECRET_KEY) {
+  if (!config.get('jwtSecretKey')) {
     console.error(`FATAL ERROR: SECRET_KEY is not exists!`)
     process.exit(1)
   }

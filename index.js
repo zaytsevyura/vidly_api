@@ -1,11 +1,6 @@
 const express = require('express');
 const app = express();
 
-const config = require('config');
-
-console.log('Mode: ', app.get('env'))
-console.log('Custom: ', config.get('custom'))
-
 require('./startup/error-config')()
 require('./startup/db')()
 require('./startup/routes')(app)

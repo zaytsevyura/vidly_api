@@ -1,4 +1,5 @@
 {
   "db": "mongodb://localhost/vidly_tests1",
+  "jwtSecretKey": "jwtSecretKey",
   "custom": "test value"
 }

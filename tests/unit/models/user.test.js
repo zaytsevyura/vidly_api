@@ -1,6 +1,6 @@
 const {User} = require('../../../models/user');
 const jwt = require('jsonwebtoken');
-require('dotenv').config()
+const config = require('config');
 const mongoose = require('mongoose');
 
 describe('user.generateAuthToken', () => {
@@ -11,7 +11,7 @@ describe('user.generateAuthToken', () => {
     };
     const user = new User(payload);
     const token = user.generateAuthToken();
-    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    const decoded = jwt.verify(token, config.get('jwtSecretKey'));
     expect(decoded).toMatchObject(payload);
   });
 });

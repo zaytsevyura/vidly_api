@@ -1,4 +1,5 @@
 {
   "custom": "CUS_VALUE",
+  "jwtSecretKey": "jwtSecretKey",
   "db": "DB_URL_PROD"
 }
